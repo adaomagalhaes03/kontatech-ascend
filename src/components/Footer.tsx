@@ -108,15 +108,15 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                <span>contato@kontatech.pt</span>
+                <a href="mailto:kontatech84@gmail.com" className="hover:text-gold transition-colors">kontatech84@gmail.com</a>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                <span>+244 XXX XXX XXX</span>
+                <a href="tel:+244933177856" className="hover:text-gold transition-colors">+244 933 177 856</a>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                <span>Luanda, Angola</span>
+                <span>Talatona Via A2, Luanda, Angola</span>
               </li>
             </ul>
           </motion.div>
