@@ -13,6 +13,7 @@ const footerLinks = {
     { name: 'Sobre Nós', href: '#sobre' },
     { name: 'Processo', href: '#processo' },
     { name: 'Contacto', href: '#contacto' },
+    { name: 'Criar Conta', href: '/admin/register' },
   ],
   social: [
     { name: 'LinkedIn', icon: Linkedin, href: '#' },
