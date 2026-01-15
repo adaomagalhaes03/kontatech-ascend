@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { ConsultationModal } from './ConsultationModal';
 
 export const CTASection = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
@@ -101,7 +103,7 @@ export const CTASection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
             <motion.a
-              href="mailto:contato@kontatech.pt"
+              href="mailto:kontatech84@gmail.com"
               className="btn-primary inline-flex items-center justify-center gap-2 group animate-pulse-gold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -110,15 +112,15 @@ export const CTASection = () => {
               Enviar Email
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </motion.a>
-            <motion.a
-              href="#"
+            <motion.button
+              onClick={() => setIsConsultationOpen(true)}
               className="btn-secondary inline-flex items-center justify-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <Phone className="w-5 h-5" />
               Agendar Consulta
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           {/* Contact Info */}
@@ -131,15 +133,17 @@ export const CTASection = () => {
           >
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-gold" />
-              <span>contato@kontatech.pt</span>
+              <a href="mailto:kontatech84@gmail.com" className="hover:text-gold transition-colors">kontatech84@gmail.com</a>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-gold" />
-              <span>+244 XXX XXX XXX</span>
+              <a href="tel:+244933177856" className="hover:text-gold transition-colors">+244 933 177 856</a>
             </div>
           </motion.div>
         </div>
       </div>
+
+      <ConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
     </section>
   );
 };
